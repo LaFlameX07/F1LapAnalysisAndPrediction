@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Predict Pit Stop Duration</title>
+</head>
+<body>
+    <header>
+        <h1>Predict Pit Stop Duration</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('predict_necessity') }}">Predict Pit Stop Necessity</a></li>
+            <li><a href="{{ url_for('lap_analysis') }}">Lap-wise Analysis</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form method="POST">
+            <label for="stops">Stops:</label>
+            <input type="text" id="stops" name="stops" required>
+            
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="lap">Lap:</label>
+            <input type="text" id="lap" name="lap" required>
+            
+            <label for="time_of_day">Time of Day:</label>
+            <select id="time_of_day" name="time_of_day" required>
+                {% for time_of_day in time_of_day_options %}
+                <option value="{{ time_of_day }}">{{ time_of_day }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="car">Car:</label>
+            <select id="car" name="car" required>
+                {% for car in cars %}
+                <option value="{{ car }}">{{ car }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Predict Duration">
+        </form>
+        {% if prediction is defined %}
+        <p>Predicted Duration: {{ prediction }}</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 F1 Pit Stop Analysis</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

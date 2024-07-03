@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>F1 Pit Stop Analysis</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to F1 Pit Stop Analysis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('predict_duration') }}">Predict Pit Stop Duration</a></li>
+            <li><a href="{{ url_for('predict_necessity') }}">Predict Pit Stop Necessity</a></li>
+            <li><a href="{{ url_for('lap_analysis') }}">Lap-wise Analysis</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Explore the various tools and insights we provide for analyzing and predicting pit stop performance in Formula One.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 F1 Pit Stop Analysis</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

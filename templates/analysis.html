@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Lap-wise Analysis</title>
+</head>
+<body>
+    <header>
+        <h1>Lap-wise Analysis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('predict_duration') }}">Predict Pit Stop Duration</a></li>
+            <li><a href="{{ url_for('predict_necessity') }}">Predict Pit Stop Necessity</a></li>
+        </ul>
+    </nav>
+    <main>
+        <img src="{{ url_for('static', filename='images/average_pit_stop_time_by_car.png') }}" alt="Average Pit Stop Time by Car">
+        <img src="{{ url_for('static', filename='images/lap_analysis.png') }}" alt="Pit Stop Times per Lap">
+        <img src="{{ url_for('static', filename='images/pit_stop_time_distribution.png') }}" alt="Distribution of Pit Stop Times">
+        <img src="{{ url_for('static', filename='images/pit_stops_per_year.png') }}" alt="Number of PitStops per Year">
+    </main>
+    <footer>
+        <p>&copy; 2024 F1 Pit Stop Analysis</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
