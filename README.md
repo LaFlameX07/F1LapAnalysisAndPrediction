@@ -42,14 +42,28 @@ Finally, the trained models are saved using joblib.dump() and converted to ONNX 
 The project includes several visualizations to provide insights into pit stop patterns:
 1. **Average pit stop time per lap**
     This part of the code calculates the average pit stop time for each lap and plots it using a line plot. It helps to understand how the average pit stop time varies across different laps.
+<p align="center">
+  <img src="/static/images/lap_analysis.png" title="Average pit stop time per lap">
+</p>
+
 2. **Distribution of Pit Stop Times**
     This part of the code plots a histogram with a kernel density estimation (KDE) curve to visualize the distribution of pit stop times. It provides insights into the spread and shape of the pit stop time data.
+<p align="center">
+  <img src="/static/images/pit_stop_time_distribution.png" title="Distribution of Pit Stop Times">
+</p>
+
 3. **Number of Pit Stops per Year**
     This part of the code calculates the number of pit stops for each year and plots a bar chart. It helps to understand the trend in the number of pit stops over the years.
+<p align="center">
+  <img src="/static/images/pit_stops_per_year.png" title="Number of Pit Stops per Year">
+</p>
+
 4. **Average Pit Stop Time by Car**
     This part of the code calculates the average pit stop time for each car and plots a bar chart. It helps to compare the average pit stop time across different cars.
-
-
+<p align="center">
+  <img src="/static/images/average_pit_stop_time_by_car.png" title="Average Pit Stop Time by Car">
+</p>
+   
 ## Future Work
 - Integrate additional features to improve model accuracy.
 - Incorporate real-time data for dynamic predictions during races.
